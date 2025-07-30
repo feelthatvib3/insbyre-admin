@@ -55,7 +55,7 @@ export function DeleteProductButton({ productId, ...props }: DeleteProductButton
       {...props}
     >
       {isPending ? <Spinner /> : <TrashSimpleIcon size={16} weight="fill" />}
-      Удалить продукт
+      Удалить товар
     </Button>
   );
 }

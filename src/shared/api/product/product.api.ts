@@ -9,9 +9,9 @@ export async function createProduct(product: ProductWithoutIdAndDate): Promise<P
     .single<Product>();
   if (error) {
     if (error.code === '23505') {
-      throw new Error('Такой продукт уже существует.');
+      throw new Error('Такой товар уже существует.');
     }
-    throw new Error('Ошибка при создании продукта. Попробуйте позже.');
+    throw new Error('Ошибка при создании товара. Попробуйте позже.');
   }
   return data;
 }
@@ -23,7 +23,7 @@ export async function getProductById(productId: string): Promise<Product> {
     .eq('id', productId)
     .single<Product>();
   if (error) {
-    throw new Error('Произошла ошибка при получении продукта. Попробуйте позже.');
+    throw new Error('Произошла ошибка при получении товара. Попробуйте позже.');
   }
   return data;
 }
@@ -31,7 +31,7 @@ export async function getProductById(productId: string): Promise<Product> {
 export async function getProducts(): Promise<Product[]> {
   const { data, error } = await supabase.from('products').select();
   if (error) {
-    throw new Error('Произошла ошибка при получении списка продуктов. Попробуйте позже.');
+    throw new Error('Произошла ошибка при получении списка товаров. Попробуйте позже.');
   }
   return data;
 }
@@ -50,7 +50,7 @@ export async function updateProductById({
     .select()
     .single<Product>();
   if (error) {
-    throw new Error('Ошибка при обновлении продукта. Попробуйте позже.');
+    throw new Error('Ошибка при обновлении товара. Попробуйте позже.');
   }
   return data;
 }
@@ -60,8 +60,8 @@ export async function deleteProductById(productId: string): Promise<void> {
 
   if (error) {
     if (error.code === '23503') {
-      throw new Error('Невозможно удалить продукт — он используется в других данных.');
+      throw new Error('Невозможно удалить товар — он используется в других данных.');
     }
-    throw new Error('Ошибка при удалении продукта. Попробуйте позже.');
+    throw new Error('Ошибка при удалении товара. Попробуйте позже.');
   }
 }
