@@ -6,6 +6,7 @@ import { Root } from 'app/root';
 import 'app/styles/index.css';
 
 import { queryClient } from 'shared/api/query-client';
+import 'shared/api/supabase';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
