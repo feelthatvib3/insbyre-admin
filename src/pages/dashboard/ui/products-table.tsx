@@ -24,7 +24,6 @@ export function ProductsTable() {
           <TableHead className="font-bold">Слаг</TableHead>
           <TableHead className="font-bold">Название</TableHead>
           <TableHead className="font-bold">Категория(и)</TableHead>
-          <TableHead className="font-bold">Изображения</TableHead>
           <TableHead className="font-bold">В наличии</TableHead>
           <TableHead className="font-bold">Цена</TableHead>
         </TableRow>
@@ -41,15 +40,6 @@ export function ProductsTable() {
                   {c}
                   {p.categories.length - 1 === index ? '' : ', '}
                 </span>
-              ))}
-            </TableCell>
-            <TableCell className="flex items-center gap-x-0.5 overflow-hidden">
-              {p.images.map((i) => (
-                <img
-                  src={i}
-                  alt="Product image"
-                  className="block size-4 rounded-full object-cover"
-                />
               ))}
             </TableCell>
             <TableCell>
