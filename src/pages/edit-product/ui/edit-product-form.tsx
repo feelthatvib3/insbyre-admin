@@ -322,11 +322,14 @@ export function EditProductForm({ categories, product }: EditProductFormProps) {
                   <MultiSelect
                     options={[
                       { label: 'XS', value: 'XS' },
+                      { label: 'XS/S', value: 'XS/S' },
                       { label: 'S', value: 'S' },
                       { label: 'M', value: 'M' },
+                      { label: 'M/L', value: 'M/L' },
                       { label: 'L', value: 'L' },
                       { label: 'XL', value: 'XL' },
-                      { label: 'XXL', value: 'XXL' }
+                      { label: 'XXL', value: 'XXL' },
+                      { label: 'Onesize', value: 'Onesize' }
                     ]}
                     value={(field.value ?? []).map((size) => ({ label: size, value: size }))}
                     onChange={(selected) => field.onChange(selected.map((s) => s.label))}
