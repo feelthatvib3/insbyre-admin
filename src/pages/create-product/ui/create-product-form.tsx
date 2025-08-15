@@ -323,7 +323,7 @@ export function CreateProductForm({ categories }: CreateProductFormProps) {
                       { label: 'L', value: 'L' },
                       { label: 'XL', value: 'XL' },
                       { label: 'XXL', value: 'XXL' },
-                      { label: 'One size', value: 'One size' }
+                      { label: 'Onesize', value: 'Onesize' }
                     ]}
                     value={(field.value ?? []).map((size) => ({ label: size, value: size }))}
                     onChange={(selected) => field.onChange(selected.map((s) => s.label))}
